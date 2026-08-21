@@ -1,0 +1,1816 @@
+# Backend — Engenharia de Software
+
+**Disciplina:** Backend — Engenharia de Software
+**Professor:** Daniel Plácido
+**Contato:** daniel.placido@satc.edu.br
+**SATC 2026.1**
+
+## Índice
+
+- [Aula 2 — Introdução à Disciplina e Arquitetura da Web](#aula-2--introdução-à-disciplina-e-arquitetura-da-web)
+  - [Tópico 00 — Introdução à Disciplina](#tópico-00--introdução-à-disciplina)
+  - [Tópico 01 — Introdução à Web](#tópico-01--introdução-à-web)
+  - [Tópico 02 — Arquitetura da Web](#tópico-02--arquitetura-da-web)
+- [Aula 3 — Ambiente de Desenvolvimento: Java na prática + Git na prática](#aula-3--ambiente-de-desenvolvimento-java-na-prática--git-na-prática)
+  - [Materiais](#materiais)
+  - [Objetivo da aula](#objetivo-da-aula)
+  - [Parte 1 — Java na prática](#parte-1--java-na-prática)
+  - [Parte 2 — Git na prática](#parte-2--git-na-prática)
+  - [O que aprendemos hoje](#o-que-aprendemos-hoje)
+  - [Exercício extra — Cadastro de Alunos (para casa)](#exercício-extra--cadastro-de-alunos-para-casa)
+- [Aula 4 e 5 — Orientação a Objetos em Java + Tópicos Especiais](#aula-4-e-5--orientação-a-objetos-em-java--tópicos-especiais)
+  - [Materiais](#materiais-1)
+  - [Objetivo da aula](#objetivo-da-aula-1)
+  - [Parte 1 — Orientação a Objetos em Java](#parte-1--orientação-a-objetos-em-java)
+  - [Parte 2 — Tópicos Especiais em Java](#parte-2--tópicos-especiais-em-java)
+  - [Parte 3 — Prática: evoluindo o projeto exemplo-oop](#parte-3--prática-evoluindo-o-projeto-exemplo-oop)
+  - [Glossário rápido](#glossário-rápido)
+- [Aula 6 — Avaliação N1](#aula-6--avaliação-n1)
+- [Aula 7 — Web Services + Protocolo HTTP/JSON](#aula-7--web-services--protocolo-httpjson)
+  - [Materiais](#materiais-2)
+  - [Objetivo da aula](#objetivo-da-aula-2)
+  - [Parte 1 — Web Services](#parte-1--web-services)
+  - [Parte 2 — Protocolo HTTP](#parte-2--protocolo-http)
+  - [Parte 3 — Formatos de Dados e JSON](#parte-3--formatos-de-dados-e-json)
+  - [Parte 4 — Arquiteturas de Web Services](#parte-4--arquiteturas-de-web-services)
+  - [Exercícios](#exercícios)
+  - [Glossário rápido](#glossário-rápido-1)
+- [Aula 8 — Padrões de Arquitetura + Arquitetura REST](#aula-8--padrões-de-arquitetura--arquitetura-rest)
+  - [Materiais](#materiais-3)
+  - [Objetivo da aula](#objetivo-da-aula-3)
+  - [Parte 1 — Padrões de Arquitetura](#parte-1--padrões-de-arquitetura)
+  - [Parte 2 — Arquitetura REST com Spring Web](#parte-2--arquitetura-rest-com-spring-web)
+  - [Exercícios](#exercícios-1)
+  - [Glossário rápido](#glossário-rápido-2)
+
+---
+
+## Aula 2 — Introdução à Disciplina e Arquitetura da Web
+
+**Materiais:**
+
+| Arquivo | Conteúdo |
+|---|---|
+| [P1_Introducao_a_Disciplina.pdf](<Aula 01/P1_Introducao_a_Disciplina.pdf>) | Tópico 00 — Introdução à Disciplina |
+| [P2_Introducao_a_Web.pdf](<Aula 01/P2_Introducao_a_Web.pdf>) | Tópico 01 — Introdução à Web |
+| [P3_Arquitetura_da_Web.pdf](<Aula 01/P3_Arquitetura_da_Web.pdf>) | Tópico 02 — Arquitetura da Web |
+
+Esta aula reúne três apresentações, que juntas dão a base necessária antes de começarmos a programar:
+
+1. **Tópico 00 — Introdução à Disciplina**
+2. **Tópico 01 — Introdução à Web**
+3. **Tópico 02 — Arquitetura da Web**
+---
+
+### Tópico 00 — Introdução à Disciplina
+
+#### O que é Backend?
+
+Todo sistema é dividido em duas grandes partes que trabalham juntas — como um restaurante:
+
+- **Frontend (o salão):** o que o cliente vê e toca — telas, botões, formulários.
+- **Backend (a cozinha):** o que o cliente não vê — regras de negócio, processamento e banco de dados.
+O Backend recebe pedidos, aplica regras de negócio, conversa com o banco de dados e devolve uma resposta. É o que estudaremos durante todo o semestre.
+
+**Exemplos do dia a dia:** iFood (calcula frete, reserva pedido na cozinha), Instagram (registra curtidas, decide o feed), Netflix (salva onde você parou, libera vídeo só para assinantes), banco (confere saldo, valida senha, autoriza transferência).
+
+#### Ementa: as 3 grandes etapas
+
+| Etapa | Conteúdo |
+|---|---|
+| **1ª — Ambiente de Desenvolvimento** | Fundamentos da Web, protocolo HTTP, linguagem Java (variáveis, orientação a objetos, lógica de programação) |
+| **2ª — API REST** | Web Services, arquitetura REST, persistência de dados, DTOs, construção de uma API completa em Java com Spring |
+| **3ª — Tópicos Avançados** | Integração de serviços, observabilidade e testes, Model Context Protocol (MCP), autenticação e segurança, infraestrutura, projeto final |
+
+#### Cronograma completo — 20 aulas
+
+| Aula | Conteúdo |
+|---|---|
+| 1 | Não há aula para veteranos neste dia |
+| 2 | Introdução à Disciplina e Arquitetura da Web |
+| 3 | Ambiente de Desenvolvimento |
+| 4-5 | Orientação a Objetos em Java + Tópicos Especiais |
+| 6 | Avaliação N1 |
+| 7 | Web Services + Protocolo HTTP/JSON |
+| 8 | Padrões de Arquitetura + Arquitetura REST |
+| 9 | Persistência de Dados |
+| 10 | DTO e Mapeamento |
+| 11 | Avaliação N2a |
+| 12 | Projeto Intermediário N2b |
+| 13 | Integração de Serviços |
+| 14 | Observabilidade e Testes |
+| 15 | Model Context Protocol (MCP) + IA no Desenvolvimento |
+| 16 | Autenticação e Segurança |
+| 17 | Infraestrutura |
+| 18-19 | Desenvolvimento do Projeto Final |
+| 20 | Projeto Final |
+
+*Datas específicas a definir — cronograma sujeito a ajustes.*
+
+#### Avaliação
+
+| Código | Tipo | O que cobre |
+|---|---|---|
+| **N1** | Prova teórica | Arquitetura da Web, HTTP e Orientação a Objetos em Java |
+| **N2a** | Prova teórica | Web Services, REST e Persistência de Dados |
+| **N2b** | Projeto prático | Construção de uma API REST funcional |
+| **N3** | Projeto Final | Sistema completo, integrando os tópicos avançados |
+
+#### Onde encontrar o material
+
+Todo o material da disciplina (slides, materiais de apoio, exemplos de código) fica disponível e sempre atualizado no repositório do GitHub. Sempre que uma pasta for atualizada, o material mais novo estará lá — não é necessário pedir por e-mail.
+
+#### Ferramentas usadas na disciplina
+
+| Ferramenta | O que é |
+|---|---|
+| **JDK** | O "motor" que traduz e executa código Java |
+| **IDE (ex.: IntelliJ)** | Editor de código com ajuda automática |
+| **Git** | Guarda o histórico de versões do código |
+| **GitHub** | Hospeda repositórios Git na nuvem |
+| **Terminal** | Tela de texto para executar comandos diretamente |
+| **API** | Conjunto de operações que um sistema oferece a outros sistemas |
+| **Banco de dados** | Guarda informação de forma organizada e permanente |
+| **Postman** | Testa APIs manualmente, simulando requisições |
+
+---
+
+### Tópico 01 — Introdução à Web
+
+#### Internet x Web
+
+- **Internet:** a infraestrutura — cabos, servidores e protocolos que conectam computadores no mundo todo.
+- **Web (WWW):** um dos serviços que roda sobre a internet, baseado em páginas conectadas por links.
+E-mail, WhatsApp e chamadas de vídeo também rodam sobre a internet, mas não são "a Web".
+
+#### O nascimento da Web
+
+Em 1989, **Tim Berners-Lee**, no CERN (Suíça), propôs um sistema de hipertexto para resolver o problema de pesquisadores trocando documentos entre computadores diferentes. Dessa proposta nasceram três pilares: **HTML**, **URL** e **HTTP**.
+
+#### Cliente e Servidor
+
+- **Cliente:** o navegador — faz o pedido, mas não guarda dados nem processa regras.
+- **Servidor:** recebe o pedido, processa e devolve o resultado. É onde vive o Backend.
+#### Anatomia de uma URL
+
+```
+https://www.satc.edu.br/cursos/backend?turma=2026
+```
+
+| Parte | Nome | Função |
+|---|---|---|
+| `https://` | Protocolo | A "língua" usada na conversa |
+| `www.satc.edu.br` | Domínio | Identifica o servidor |
+| `/cursos/backend` | Caminho | Página/recurso específico dentro do servidor |
+| `?turma=2026` | Parâmetros | Informações extras enviadas junto do pedido |
+
+#### Ciclo Requisição-Resposta
+
+1. Você digita ou clica
+2. O navegador monta uma requisição
+3. A requisição viaja pela internet
+4. O servidor processa o pedido
+5. O servidor devolve uma resposta
+6. O navegador exibe o resultado
+#### Evolução da Web
+
+| Era | Período | Características |
+|---|---|---|
+| **Web 1.0** | ~1991–2004 | Páginas estáticas, só leitura, sem conta de usuário |
+| **Web 2.0** | ~2004–2010 | Interação, redes sociais, conteúdo gerado pelo usuário |
+| **Web 3.0** | ~2010–atual | Web semântica, mobile-first, APIs, descentralização |
+| **Web 4.0/5.0** | 2020s em diante | IA generativa integrada, protocolos como o MCP, web onipresente |
+
+#### Roadmap de habilidades para 2026
+
+1. Lógica de programação
+2. Uma linguagem backend (Java)
+3. Banco de dados
+4. APIs e arquitetura REST
+5. Versionamento com Git
+6. Nuvem (Cloud) e infraestrutura
+---
+
+### Tópico 02 — Arquitetura da Web
+
+#### O que é a arquitetura da Web?
+
+Conjunto de tecnologias e padrões que fazem a Web funcionar: **URI, HTTP, DNS e TLS**. A Web foi projetada para ser **simples**, **universal** e **escalável**.
+
+#### URI (Uniform Resource Identifier)
+
+```
+https://exemplo.com/artigos/123?ref=homepage
+```
+
+| Parte | Nome | Função |
+|---|---|---|
+| `https://` | Esquema | Protocolo usado para acessar o recurso |
+| `exemplo.com` | Domínio | Identifica o servidor |
+| `/artigos/123` | Caminho | Recurso específico solicitado |
+| `?ref=homepage` | Query / parâmetros | Informações extras do pedido |
+
+#### DNS (Domain Name System)
+
+A "lista telefônica" da Internet — traduz nomes em endereços IP.
+
+```
+exemplo.com → 2.2.2.2
+```
+
+#### HTTP (HyperText Transfer Protocol)
+
+Define como cliente e servidor conversam, no modelo requisição → resposta.
+
+```http
+GET /index.html HTTP/1.1
+Host: exemplo.com
+```
+
+**Métodos:**
+
+| Método | Intenção |
+|---|---|
+| `GET` | Buscar/ler um recurso |
+| `POST` | Criar um novo recurso |
+| `PUT` | Atualizar um recurso existente |
+| `DELETE` | Remover um recurso |
+
+**Códigos de status:**
+
+| Faixa | Categoria | Exemplo |
+|---|---|---|
+| `2xx` | Sucesso | `200 OK` |
+| `3xx` | Redirecionamento | `301 Moved` |
+| `4xx` | Erro do cliente | `404 Not Found` |
+| `5xx` | Erro do servidor | `500 Internal Server Error` |
+
+#### TLS (Transport Layer Security) e HTTPS
+
+Garante **confidencialidade** (criptografia), **integridade** (detecção de alterações) e **autenticidade** (certificado digital). HTTP + TLS = HTTPS.
+
+**Handshake TLS:**
+
+1. Cliente envia informações iniciais
+2. Servidor responde com certificado digital
+3. Cliente verifica o certificado
+4. Cliente e servidor criam uma chave de sessão e passam a criptografar a comunicação
+#### Fluxo completo de uma requisição
+
+1. Cliente digita/clica em um URI
+2. Domínio resolvido via DNS → IP do servidor
+3. Cliente abre conexão TCP (porta 80 ou 443)
+4. Handshake TLS, se HTTPS
+5. Cliente envia a requisição HTTP
+6. Servidor processa a requisição
+7. Servidor envia a resposta HTTP
+8. Cliente renderiza a página
+9. Conexão fechada ou mantida aberta (keep-alive)
+10. Novas requisições seguem o mesmo fluxo
+#### Mão na massa
+
+**Terminal:**
+```bash
+curl -v https://exemplo.com
+```
+
+**DevTools do navegador:** `F12` → aba **Network** → recarregar a página → inspecionar qualquer requisição (método, headers, status code, corpo da resposta).
+
+#### Servidor Web x Servidor de Aplicação
+
+| | Servidor Web | Servidor de Aplicação |
+|---|---|---|
+| **Função** | Entrega arquivos estáticos e respostas de aplicações | Executa a lógica de negócio da aplicação |
+| **Exemplos** | Apache, Nginx, IIS | APIs REST, aplicações corporativas |
+
+#### Frameworks
+
+| Stack | Servidor embutido |
+|---|---|
+| **Java / Spring Boot** ⭐ (usado nesta disciplina) | Tomcat |
+| **Python / Django, Flask** | Werkzeug, Gunicorn, Uvicorn |
+| **Node.js / Express.js** | O próprio Node.js |
+
+---
+
+### Resumo geral da Aula 2
+
+- Backend é a "cozinha" de um sistema: regras de negócio, processamento e banco de dados.
+- Internet é a infraestrutura; Web é um dos serviços que rodam sobre ela.
+- Toda página envolve um Cliente (navegador) e um Servidor (Backend), conversando via HTTP.
+- URI identifica o recurso; DNS traduz nomes em IP; TLS garante segurança (HTTPS).
+- A Web evoluiu de estática (1.0) para inteligente e integrada a IA (3.0/4.0/5.0).
+- Servidor Web entrega conteúdo; Servidor de Aplicação roda a lógica de negócio — é onde o código desta disciplina vai viver (Java/Spring Boot).
+**Próxima aula:** Ambiente de Desenvolvimento — instalação e configuração de JDK, IDE e Git.
+
+---
+
+## Aula 3 — Ambiente de Desenvolvimento: Java na prática + Git na prática
+
+### Materiais
+
+| Arquivo | Conteúdo |
+|---|---|
+| [aula02-java-git-na-pratica.pdf](<Aula 02/aula02-java-git-na-pratica.pdf>) | Slides da aula |
+| [ola-mundo.zip](<Aula 02/ola-mundo.zip>) | Projeto Maven usado na aula (Hello World em Java) |
+
+Backend · Prof. Daniel Plácido · SATC 2026.1
+
+### Objetivo da aula
+
+Nesta aula vamos, na prática:
+
+1. Preparar o ambiente de desenvolvimento (JDK + IntelliJ IDEA).
+2. Abrir, executar e explorar o projeto `ola-mundo`, nosso primeiro programa Java.
+3. Instalar o Git, criar conta no GitHub e configurar acesso via SSH.
+4. Versionar o projeto `ola-mundo` e enviar o primeiro commit para o GitHub.
+---
+
+### Parte 1 — Java na prática
+
+#### Pré-requisitos
+
+Antes de começar, confirme que você tem:
+
+- **JDK instalado** — o projeto usa Java na versão 25. Confirme com o comando `java -version` no terminal. Se não tiver, peça ajuda ao professor antes de continuar.
+
+> **O que é o JDK?**
+>
+> **JDK** (*Java Development Kit*) é o kit completo para desenvolver e rodar programas Java. Reúne três peças:
+>
+> - **Compilador (`javac`)** — traduz o código-fonte que você escreve (`.java`) para *bytecode* (`.class`), um formato intermediário.
+> - **JVM (Java Virtual Machine)** — a "máquina virtual" que executa esse bytecode, traduzindo-o para o que o processador entende. É por causa da JVM que o mesmo `.class` roda igual no Windows, Mac ou Linux.
+> - **JRE (Java Runtime Environment)** — JVM + bibliotecas padrão (`String`, `ArrayList`, `Scanner`...) que todo programa Java usa em tempo de execução.
+>
+> Resumindo: **JDK = JRE + compilador + ferramentas de desenvolvimento**. O JRE sozinho só *executa* Java já compilado; o JDK também permite *escrever e compilar* — por isso é ele que instalamos para programar, não só o JRE. No comando `java -version`, é o JDK instalado que responde.
+
+> **Preciso mesmo configurar `JAVA_HOME`/`PATH` do sistema?**
+>
+> Só se você for usar `java`, `javac` ou `mvn` **direto no terminal**, fora do IntelliJ. Dentro da IDE, o projeto roda independente da configuração do sistema:
+>
+> - **JDK do projeto**: em `File → Project Structure → SDKs` (ou `Project`), o IntelliJ detecta automaticamente os JDKs instalados na máquina, varrendo os locais padrão de instalação — mesmo que o `PATH`/`JAVA_HOME` do sistema esteja errado ou apontando para uma versão antiga. Se não detectar, dá para apontar manualmente para a pasta do JDK ali mesmo, sem tocar em variável de ambiente nenhuma.
+> - **Dependências do Maven** (as do `pom.xml`): o IntelliJ resolve e baixa tudo sozinho, usando o Maven embutido dele (é o "Resolving dependencies" / "Downloading..." do Passo 4), também sem depender do terminal.
+>
+> Ou seja, os blocos de troubleshooting abaixo (Windows/macOS/Linux) resolvem problemas do **terminal**. Se o erro aparecer só dentro do IntelliJ (ex.: "No JDK found"), a solução é direto pelo `Project Structure` — veja a tabela de "Problemas comuns" mais abaixo.
+
+> **Windows — JDK ausente ou mal configurado:**
+>
+> | Sintoma | O que fazer |
+> |---|---|
+> | `'java' não é reconhecido como um comando interno ou externo` | JDK não instalado. Baixe o JDK 25 (ex.: [Eclipse Temurin](https://adoptium.net) ou [Oracle JDK](https://www.oracle.com/java/technologies/downloads/)) e rode o instalador `.msi` com as opções padrão. |
+> | `java -version` mostra uma versão antiga (8, 11, 17...) | Outro JDK mais antigo está na frente no `PATH`. Ajuste a variável `JAVA_HOME` para a pasta do JDK 25 e confirme que `%JAVA_HOME%\bin` vem antes das demais entradas Java no `PATH` (Painel de Controle → Sistema → Configurações avançadas → Variáveis de Ambiente). |
+> | Comando continua não reconhecido depois de instalar | Feche e abra um terminal novo (ou reinicie o PC) — o PATH só é recarregado em uma sessão nova. |
+>
+> **O instalador já configura isso sozinho?**
+>
+> - **Oracle JDK:** configura o `PATH` automaticamente (copia `java.exe`/`javac.exe` para uma pasta compartilhada em `Common Files\Oracle\Java\javapath`, que já fica no PATH do sistema) — `java -version` já funciona depois de instalar. Mas **não define `JAVA_HOME`**; crie essa variável manualmente se alguma ferramenta exigir (Maven/Gradle pela linha de comando, por exemplo).
+> - **Eclipse Temurin:** o instalador mostra checkboxes na tela de instalação — **"Add to PATH"** e **"Set JAVA_HOME"** — normalmente já vêm marcados, então configura os dois sozinho.
+>
+> **Corrigindo `JAVA_HOME` e `PATH` quando existe um JDK antigo:**
+>
+> ⚠️ **`JAVA_HOME` e `Path` apontam para pastas diferentes** — é o erro mais comum ao configurar isso:
+>
+> | Variável | Aponta para | Exemplo |
+> |---|---|---|
+> | `JAVA_HOME` | A pasta **raiz** do JDK (sem `\bin`) | `C:\Program Files\Java\jdk-25` |
+> | `Path` | A subpasta **`\bin`** dentro dela, onde ficam `java.exe`/`javac.exe` | `%JAVA_HOME%\bin` → resolve para `C:\Program Files\Java\jdk-25\bin` |
+>
+> Se o `Path` apontar para a pasta raiz (sem o `\bin`), o Windows não acha o executável e o erro de "comando não reconhecido" continua, mesmo com `JAVA_HOME` certo.
+>
+> 1. Descubra a pasta **raiz** do JDK 25 instalado, ex.: `C:\Program Files\Java\jdk-25` (ou `C:\Program Files\Eclipse Adoptium\jdk-25...`, se usou o Temurin). Repare que não tem `\bin` no final — essa parte entra só no `Path`, no Passo 6.
+> 2. Aperte `Win`, digite **"Editar as variáveis de ambiente do sistema"** e abra esse painel (é o mesmo que Painel de Controle → Sistema → Configurações avançadas do sistema → aba Avançado → botão **Variáveis de Ambiente**).
+> 3. Em **Variáveis do sistema**, procure `JAVA_HOME`:
+>    - Se já existir, selecione e clique em **Editar**.
+>    - Se não existir, clique em **Novo**: nome `JAVA_HOME`, valor = a pasta **raiz** do Passo 1 (sem `\bin`).
+> 4. Ainda em **Variáveis do sistema**, selecione `Path` e clique em **Editar**.
+> 5. Veja se há alguma entrada de um JDK antigo na lista (ex.: `C:\Program Files\Java\jdk-17\bin`). Selecione essa entrada e clique em **Excluir**, ou use **Mover para cima/baixo** para jogá-la para o final da lista.
+> 6. Clique em **Novo** e adicione `%JAVA_HOME%\bin`. Use **Mover para cima** até essa entrada ficar acima de qualquer outra entrada relacionada a Java.
+> 7. Clique em **OK** em todas as janelas abertas para salvar.
+> 8. Feche **todos** os terminais e o IntelliJ, abra um terminal novo e rode `java -version` — deve mostrar a versão 25.
+>
+> O Windows usa a **primeira** entrada compatível que encontra no `PATH`, de cima para baixo — por isso a ordem importa mais do que só ter `%JAVA_HOME%\bin` na lista. Para conferir qual `java.exe` está sendo usado, rode `where java` no terminal: o primeiro caminho da lista é o que o comando `java` de fato executa.
+
+> **macOS — JDK ausente ou mal configurado:**
+>
+> | Sintoma | O que fazer |
+> |---|---|
+> | `zsh: command not found: java` (ou o macOS oferece para baixar um "Java runtime") | JDK não instalado. Baixe o JDK 25 (ex.: [Eclipse Temurin](https://adoptium.net) ou [Oracle JDK](https://www.oracle.com/java/technologies/downloads/)) e rode o instalador `.pkg`. |
+> | `java -version` mostra uma versão antiga | Mais de um JDK instalado e o `JAVA_HOME` não aponta para o 25 — veja o passo a passo abaixo. |
+> | Comando continua não reconhecido depois de instalar | Feche e abra um terminal novo, ou rode `source ~/.zshrc` para recarregar o perfil. |
+>
+> No Mac, o instalador `.pkg` do JDK registra a versão em `/Library/Java/JavaVirtualMachines/` e a torna visível para o utilitário `java_home` — normalmente não é preciso mexer em nenhum PATH manualmente, só apontar o `JAVA_HOME` certo.
+>
+> **Selecionando a versão certa com `java_home`:**
+>
+> 1. Liste todos os JDKs que o macOS já reconhece: `/usr/libexec/java_home -V` (V maiúsculo).
+> 2. Confirme que o JDK 25 aparece na lista. Se não aparecer, o instalador não rodou corretamente — reinstale o `.pkg`.
+> 3. Abra o arquivo de perfil do terminal (`~/.zshrc`, o shell padrão do macOS atual — use `~/.bash_profile` se você usa bash) e adicione ao final:
+>    ```bash
+>    export JAVA_HOME=$(/usr/libexec/java_home -v 25)
+>    export PATH="$JAVA_HOME/bin:$PATH"
+>    ```
+> 4. Salve o arquivo, feche o terminal e abra um novo (ou rode `source ~/.zshrc`).
+> 5. Rode `java -version` para confirmar que mostra a versão 25.
+
+> **Linux (Ubuntu/Debian) — JDK ausente ou mal configurado:**
+>
+> | Sintoma | O que fazer |
+> |---|---|
+> | `java: comando não encontrado` | JDK não instalado. Rode `sudo apt update && sudo apt install openjdk-25-jdk` (se a sua versão do Ubuntu ainda não tiver o pacote 25, baixe o `.tar.gz` do [Eclipse Temurin](https://adoptium.net) e extraia em `/opt/`). |
+> | `java -version` mostra uma versão antiga | Mais de um JDK instalado, e o padrão do sistema aponta para o antigo — veja o passo a passo abaixo. |
+> | Comando continua não reconhecido depois de instalar | Feche e abra um terminal novo, ou rode `source ~/.bashrc`. |
+>
+> **Escolhendo a versão padrão com `update-alternatives`:**
+>
+> 1. Veja quais JDKs o sistema já conhece: `update-alternatives --list java`.
+> 2. Rode `sudo update-alternatives --config java` e escolha o número correspondente ao JDK 25 na lista.
+> 3. Repita para o compilador: `sudo update-alternatives --config javac`.
+> 4. Rode `java -version` para confirmar.
+>
+> **Configurando `JAVA_HOME` (necessário para Maven/Gradle pela linha de comando):**
+>
+> O `apt` não define `JAVA_HOME` sozinho. Adicione ao final do `~/.bashrc`:
+> ```bash
+> export JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64
+> export PATH="$JAVA_HOME/bin:$PATH"
+> ```
+> (confirme o caminho exato com `update-alternatives --list java` — é a pasta antes do `/bin/java` no caminho listado). Depois, rode `source ~/.bashrc` ou abra um terminal novo.
+
+- **IntelliJ IDEA instalado** — pode ser a versão Community (gratuita) ou Ultimate. É o programa (IDE) que usaremos para escrever e rodar código Java.
+- **Projeto `ola-mundo` recebido** — o arquivo [`ola-mundo.zip`](<Aula 02/ola-mundo.zip>) deve estar salvo em uma pasta de fácil acesso, por exemplo Documentos ou a Área de Trabalho.
+
+#### Passo 1 — Extraindo o projeto ola-mundo
+
+- O projeto foi entregue como um arquivo compactado: [`ola-mundo.zip`](<Aula 02/ola-mundo.zip>).
+- Clique com o botão direito sobre o arquivo `.zip`.
+  - **Windows:** escolha "Extrair tudo..." (*Extract All*).
+  - **Mac:** dê duplo clique para descompactar automaticamente.
+- Escolha uma pasta de fácil acesso, por exemplo `Documentos`.
+- Ao final, você terá uma pasta chamada `ola-mundo` com os arquivos do projeto dentro:
+```
+Documentos/
+└── ola-mundo/
+    ├── pom.xml
+    ├── .gitignore
+    └── src/
+        └── main/java/org/example/
+            └── Main.java
+```
+
+> **Dica:** guarde o caminho completo da pasta `ola-mundo` — vamos precisar dele no próximo passo, dentro do IntelliJ.
+
+#### Passo 2 — Abrindo o IntelliJ IDEA
+
+- Abra o IntelliJ IDEA normalmente, como qualquer outro programa.
+- Na tela de boas-vindas, você verá algumas opções:
+  - **New Project** — cria um projeto do zero.
+  - **Open** — abre um projeto que já existe em uma pasta.
+  - **Get from VCS** — clona um projeto de um repositório Git.
+- Como o `ola-mundo` já existe na sua pasta, vamos usar a opção **Open**.
+#### Passo 3 — Selecionando a pasta do projeto
+
+- Na janela que abrir, navegue até a pasta `ola-mundo` que você extraiu no Passo 1.
+- Selecione a pasta `ola-mundo` (a pasta inteira, não um arquivo dentro dela) e clique em **OK**.
+- O IntelliJ vai reconhecer automaticamente que é um projeto Maven, por causa do arquivo `pom.xml`.
+- Pode aparecer uma janela perguntando se você confia neste projeto (*Trust Project*) — clique em **Trust Project**.
+> O que é o `pom.xml`? É o arquivo de configuração do Maven, a ferramenta que organiza as dependências e a forma como o projeto Java é construído. Por enquanto, só saiba que é ele quem diz ao IntelliJ "isto aqui é um projeto Java".
+
+#### Passo 4 — Aguardando a preparação do projeto
+
+- Assim que o projeto abrir, o IntelliJ começa a indexar os arquivos e preparar o Maven.
+- Você vai ver barras de progresso na parte inferior da tela, com textos como "Indexing", "Resolving dependencies" e "Downloading...".
+- Isso pode levar de alguns segundos a poucos minutos, dependendo da internet.
+- Espere terminar antes de seguir — mexer no projeto antes disso pode causar erros temporários.
+#### Passo 5 — Conhecendo a estrutura do projeto
+
+```
+ola-mundo/
+├── pom.xml
+├── .gitignore
+├── src/
+│   └── main/
+│       └── java/org/example/
+│           └── Main.java
+└── target/
+    └── (gerado automaticamente)
+```
+
+- **`pom.xml`** — arquivo de configuração do Maven: nome do projeto, versão do Java, etc.
+- **`src/main/java`** — pasta onde fica todo o código-fonte Java do projeto.
+- **`org/example/Main.java`** — a classe principal do nosso programa, onde vamos trabalhar hoje.
+- **`target/`** — pasta gerada automaticamente com os arquivos compilados (`.class`). Não editamos nada aqui.
+#### Passo 6 — Executando o programa pela 1ª vez
+
+- Abra o arquivo `Main.java` (dois cliques nele, na árvore de arquivos à esquerda).
+- Procure o método `main` — é o ponto de partida de todo programa Java.
+- Ao lado da linha `public static void main`, existe um triângulo verde (▶).
+- Clique nesse triângulo verde e escolha **Run 'Main.main()'**.
+- Alternativa pelo teclado: `Shift + F10` (Windows/Linux) ou `Control + R` (Mac).
+- Uma aba chamada **Run** vai abrir na parte inferior da tela — é o console do programa.
+> **Atenção:** se aparecer um erro de "JDK não configurado", veja a seção de solução de problemas mais abaixo — é a falha mais comum nesse primeiro run.
+
+#### Passo 7 — Interagindo com o console
+
+- O programa vai pedir para você digitar seu nome.
+- Clique dentro da área do console para garantir o foco, digite o nome e aperte Enter.
+- Em seguida, ele pede o sobrenome — digite e aperte Enter novamente.
+- O programa então imprime uma saudação e alguns cálculos automáticos. Exemplo de execução:
+```
+Digite o seu nome agora:
+Ada
+Digite o seu sobrenome agora:
+Lovelace
+Olá Ada Lovelace!
+O ano atual é: 2026
+O tamanho do seu nome é: 11
+Seu nome é longo
+Média final: 8
+Nota Final: 10
+Olá mundo!
+```
+
+#### Entendendo o código — leitura e variáveis
+
+Antes de entrar no código, alguns fundamentos de sintaxe:
+
+- Todo programa Java vive dentro de uma **classe** (aqui, `Main`).
+- A execução começa pelo método `main` — é o ponto de entrada do programa.
+- Cada instrução termina com `;` (ponto e vírgula).
+- Chaves `{ }` marcam o início e o fim de um bloco de código (classe, método, `if`, `for`, etc.).
+
+```java
+Scanner leitor = new Scanner(System.in);
+String nome = leitor.nextLine();
+String sobrenome = leitor.nextLine();
+int ano = 2026;
+
+System.out.println("Olá " + nome + " " + sobrenome + "!");
+```
+
+- **`Scanner`** — classe pronta do Java para ler o que o usuário digita no teclado.
+- **`String`** — tipo de dado usado para guardar texto (nome, sobrenome).
+- **`int`** — tipo de dado usado para guardar números inteiros (o ano).
+- **`+`** — operador usado para juntar (concatenar) textos e variáveis.
+
+#### Tipos de dados em Java
+
+Toda variável em Java precisa declarar explicitamente o tipo de dado que vai armazenar. Abaixo os principais tipos primitivos e de referência:
+
+**Tipos primitivos** (atributos da linguagem, não são objetos, armazenam o valor diretamente na memória):
+
+| Tipo | Descrição | Exemplo |
+|---|---|---|
+| `int` | Números inteiros (sem parte decimal): idade, ano, quantidade. | `int idade = 30;` |
+| `double` | Números com casas decimais (ponto flutuante de 64 bits): preço, altura, peso. | `double preco = 19.99;` |
+| `float` | Números com casas decimais (ponto flutuante de 32 bits, menos preciso). Requer sufixo `f`. | `float valor = 10.5f;` |
+| `long` | Números inteiros grandes (acima do limite do `int`). Requer sufixo `L`. | `long populacao = 2100000000L;` |
+| `boolean` | Valores lógicos, apenas `true` ou `false`: flags, condições. | `boolean ativo = true;` |
+
+**Tipo de referência** (não primitivo — são objetos, instâncias de classes, apontando para classes. Armazenam uma referência, endereço de memória, para o objeto, não o valor em si):
+
+| Tipo | Descrição | Exemplo |
+|---|---|---|
+| `String` | Texto, sequência de caracteres entre aspas duplas: nomes, frases, endereços. | `String nome = "Maria";` |
+
+#### Entendendo o código — decisão, vetores e repetição
+
+```java
+if ((nome.length() + sobrenome.length()) > 5) {
+    System.out.println("Seu nome é longo");
+} else { ... }
+
+Integer[] notas = new Integer[3];
+notas[0] = 10; notas[1] = 8; notas[2] = 6;
+
+for (int i = 0; i < 3; i++) {
+    soma = soma + notas[i];
+}
+```
+
+- **`if / else`** — decide qual bloco de código executar, dependendo de uma condição.
+- **Array (vetor)** — `notas` guarda 3 valores na mesma variável, acessados por posição `[0]`, `[1]`, `[2]`.
+- **`for`** — repete o bloco enquanto `i` for menor que 3, somando cada nota.
+- **`while`** — repete enquanto uma condição continuar verdadeira (usado logo depois no código, para calcular a `notaFinal`).
+#### Mão na massa: modifique o código
+
+Depois de rodar o projeto, tente estes três desafios:
+
+- **A — Mude a mensagem final:** troque o texto `"Olá mundo!"` dentro do método `exercicio01` por uma mensagem sua.
+- **B — Adicione uma 4ª nota:** aumente o array `notas` para 4 posições, adicione um novo valor e ajuste o `for` e a divisão da média.
+- **C — Controle adicional:** controle o tamanho do array dentro de uma nova variável, e use o atributo `notas.length` para ajustar o `for` e a divisão da média.
+> Depois de cada alteração, rode o programa de novo (▶) para ver o resultado. Errar é normal — é assim que se aprende a programar!
+
+#### Problemas comuns ao rodar o projeto
+
+| Problema | Solução |
+|---|---|
+| "No JDK found" / SDK não configurado | `File → Project Structure → Project` → escolha um JDK instalado (versão 25 ou superior). |
+| Botão ▶ verde não aparece | Confirme se abriu o arquivo `Main.java` certo e se o Maven já terminou de indexar (Passo 4). |
+| Console não aceita digitação | Clique dentro da aba **Run** antes de digitar, para dar foco ao console. |
+| Erro de compilação em vermelho | Releia a linha apontada pelo IntelliJ; normalmente é ponto e vírgula ou parênteses faltando. |
+
+---
+
+### Parte 2 — Git na prática
+
+#### Relembrando: o que é controle de versão?
+
+- Gerenciamento do código-fonte ao longo do tempo.
+- Permite contribuições de diferentes programadores no mesmo projeto.
+- Permite desfazer alterações problemáticas.
+- Ajuda na resolução de conflitos de código.
+- O **Git** é o sistema de controle de versão que vamos usar, criado por Linus Torvalds.
+O Git organiza o projeto em três áreas:
+
+```
+working directory  →  staging area  →  repository
+     (git add)              (git commit)
+```
+
+#### Passo 1 — Instalando o Git
+
+Acesse o site oficial: **git-scm.com/downloads**
+
+- **Windows:** baixe o instalador, clique em *Next* em todas as telas e finalize (as opções padrão funcionam bem).
+- **Mac:** abra o Terminal e rode `git --version` — se não estiver instalado, o próprio Mac oferece para instalar as *Command Line Tools*.
+- **Linux (Ubuntu/Debian):** abra o terminal e rode `sudo apt install git`.
+#### Passo 2 — Verificando a instalação
+
+Abra um terminal (Windows: *Git Bash*; Mac/Linux: o Terminal padrão do sistema) e rode:
+
+```bash
+$ git --version
+git version 2.45.0
+```
+
+Se aparecer um número de versão, o Git foi instalado com sucesso.
+
+#### Passo 3 — Configurando sua identidade
+
+Antes do primeiro uso, o Git precisa saber quem é você — isso identifica seus commits. Isso **não é login nem senha**, é apenas uma identificação de quem fez a alteração.
+
+```bash
+$ git config --global user.name "Ada Lovelace"
+$ git config --global user.email "ada@email.com"
+```
+
+O `--global` salva essa configuração para todos os projetos da sua máquina.
+
+#### Passo 4 — Criando uma conta no GitHub
+
+- Caso ainda não tenha, acesse **github.com** e clique em **Sign up**.
+- Informe e-mail, crie uma senha e escolha um nome de usuário.
+- Recomendação: escolha um nome de usuário profissional, pois ele aparecerá no seu portfólio.
+- Confirme seu e-mail quando o GitHub solicitar.
+- O GitHub é onde vamos hospedar o repositório remoto do projeto `ola-mundo`.
+#### Passo 5 — Gerando uma chave SSH
+
+SSH é uma forma segura de autenticar com o GitHub sem digitar senha a cada envio.
+
+```bash
+$ ssh-keygen -t ed25519 -C "ada@email.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key: [Enter]
+Enter passphrase (empty for no passphrase): [Enter]
+Enter same passphrase again: [Enter]
+```
+
+Aperte Enter três vezes para aceitar o local padrão e não definir senha adicional. Isso gera duas chaves: uma **privada** (fica só na sua máquina) e uma **pública** (vai para o GitHub).
+
+#### Passo 6 — Cadastrando a chave no GitHub
+
+Copie o conteúdo da chave pública:
+
+```bash
+# Windows (Git Bash)
+$ cat ~/.ssh/id_ed25519.pub | clip
+
+# Mac
+$ pbcopy < ~/.ssh/id_ed25519.pub
+
+# Linux
+$ cat ~/.ssh/id_ed25519.pub
+```
+
+No GitHub: foto de perfil → **Settings** → **SSH and GPG keys** → **New SSH key**. Dê um título (ex.: "Meu notebook - aula backend") e cole a chave no campo *Key*. Clique em **Add SSH key** para confirmar.
+
+#### Passo 7 — Testando a conexão SSH
+
+```bash
+$ ssh -T git@github.com
+Hi ada-lovelace! You've successfully authenticated,
+but GitHub does not provide shell access.
+```
+
+Na primeira vez, o Git pergunta se confia no servidor — digite `yes` e aperte Enter. Se aparecer a mensagem "successfully authenticated" com o seu usuário, está tudo certo!
+
+> **Atenção:** não conseguiu autenticar? Confira se colou a chave pública correta (arquivo `.pub`) no GitHub, sem espaços extras.
+
+#### Passo 8 — Criando um repositório no GitHub
+
+- No GitHub, clique no botão **+** no canto superior direito → **New repository**.
+- Repository name: `ola-mundo`.
+- Deixe como *Public* ou *Private*, como preferir.
+- **NÃO** marque a opção de criar README, `.gitignore` ou licença — nosso projeto já existe localmente.
+- Clique em **Create repository**.
+- Na próxima tela, copie a URL SSH (algo como `git@github.com:seu-usuario/ola-mundo.git`).
+> **Atenção:** marcar aquelas opções criaria arquivos no GitHub que ainda não existem localmente, gerando conflito no primeiro envio.
+
+#### Passo 9 — Iniciando o repositório local
+
+```bash
+$ cd Documentos/ola-mundo
+$ git init
+Initialized empty Git repository in .../ola-mundo/.git/
+```
+
+Isso cria uma pasta oculta `.git`, onde o Git guarda todo o histórico do projeto.
+
+#### Passo 10 — Conferindo o `.gitignore` do projeto
+
+O projeto `ola-mundo` já vem com um arquivo `.gitignore` pronto, que diz ao Git quais arquivos e pastas **nunca** devem ser versionados:
+
+```
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+*.iws
+*.iml
+```
+
+- **`target/`** — pasta com os arquivos compilados (gerados automaticamente pelo Maven).
+- **`.idea/` (parcialmente)** — configurações pessoais do IntelliJ, que não precisam ser compartilhadas.
+#### Passo 11 — Adicionando e commitando os arquivos
+
+- **`git add .`** — envia todos os arquivos modificados (exceto os ignorados) para a *staging area*.
+- **`git commit -m "mensagem"`** — salva uma versão do projeto no repositório local, com uma mensagem descritiva.
+```bash
+$ git add .
+$ git commit -m "Primeiro commit do projeto ola-mundo"
+[main (root-commit) 4f2a1b0] Primeiro commit...
+ 5 files changed, 78 insertions(+)
+```
+
+Use mensagens curtas e claras, como "Primeiro commit do projeto ola-mundo".
+
+#### Passo 12 — Vinculando o remoto e enviando
+
+- **`git remote add origin <url>`** — cria um atalho chamado `origin` apontando para o repositório do GitHub.
+- **`git branch -M main`** — renomeia o branch atual para `main`, caso ele tenha sido criado como `master`.
+- **`git push -u origin main`** — envia os commits locais para o GitHub. O `-u` lembra essa ligação para os próximos `push`.
+```bash
+$ git remote add origin git@github.com:usuario/ola-mundo.git
+$ git branch -M main
+$ git push -u origin main
+Enumerating objects: 6, done.
+...
+branch 'main' set up to track 'origin/main'.
+```
+
+> **Dica:** se o branch padrão do seu projeto se chamar `master` em vez de `main`, o comando `git branch -M main` resolve isso antes do `push`.
+
+#### Conferindo o resultado no GitHub
+
+- Volte ao navegador e atualize a página do seu repositório `ola-mundo`.
+- Você deve ver os arquivos do projeto: `pom.xml`, `.gitignore` e a pasta `src`.
+- Clique no commit para conferir a mensagem que você escreveu.
+- Parabéns — esse é o seu primeiro projeto versionado e publicado no GitHub!
+#### Branches na prática
+
+Um branch é uma linha paralela de desenvolvimento, isolada da principal (`main`). Útil para testar uma alteração sem arriscar o código que já funciona.
+
+```bash
+$ git checkout -b nova-feature
+Switched to a new branch 'nova-feature'
+
+$ git branch
+  main
+* nova-feature
+```
+
+Depois de alterar o código na branch `nova-feature`, faça o *push* da branch para o repositório remoto com `git push -u origin nova-feature`:
+
+```bash
+$ git push -u origin nova-feature
+Enumerating objects: 4, done.
+...
+branch 'nova-feature' set up to track 'origin/nova-feature'.
+```
+
+Depois de testar, volte para o `main` com `git checkout main`.
+
+#### Unindo alterações com merge
+
+O comando `merge` incorpora as modificações de um branch em outro.
+
+```bash
+$ git checkout main
+$ git merge nova-feature
+Updating 4f2a1b0..9c3d2e1
+Fast-forward
+```
+
+Primeiro, volte para o branch que vai receber as alterações (geralmente `main`); depois, rode `git merge` apontando para o branch de origem.
+
+#### Atualizando e enviando alterações
+
+- **`git fetch`** — atualiza as referências locais do repositório remoto, sem alterar seus arquivos.
+- **`git pull`** — atualiza as referências e já aplica (*merge*) as mudanças nos seus arquivos locais.
+- **`git push`** — envia seus commits locais para o repositório remoto no GitHub.
+#### O fluxo completo, do zero ao GitHub
+
+```
+Working Directory  →  Staging Area  →  Local Repository  →  Remote Repository (GitHub)
+        git add             git commit              git push
+```
+
+#### Cheat-sheet: comandos Git desta aula
+
+| Comando | O que faz |
+|---|---|
+| `git init` | Inicia um repositório Git na pasta atual |
+| `git config --global user.name/user.email` | Define sua identidade nos commits |
+| `git add .` | Move alterações para a staging area |
+| `git commit -m "mensagem"` | Salva uma versão no repositório local |
+| `git remote add origin <url>` | Vincula o repositório local a um remoto |
+| `git push -u origin main` | Envia commits locais para o GitHub |
+| `git fetch` | Atualiza referências do remoto, sem alterar arquivos |
+| `git pull` | Atualiza referências e aplica as mudanças localmente |
+| `git checkout -b <nome>` | Cria e muda para um novo branch |
+| `git merge <branch>` | Incorpora as alterações de outro branch |
+
+---
+
+### O que aprendemos hoje
+
+- Abrir e executar um projeto Java real no IntelliJ IDEA.
+- Ler e entender um código com variáveis, decisão, vetores e repetição.
+- Instalar o Git e configurar acesso seguro via SSH ao GitHub.
+- Fazer o primeiro commit e enviar um projeto para um repositório remoto.
+- Trabalhar com branches, merge e sincronização (`fetch`/`pull`/`push`).
+**Próxima aula:** Orientação a Objetos I.
+
+---
+
+### Exercício extra — Cadastro de Alunos (para casa)
+
+> Se sobrar tempo no laboratório, comece agora; caso contrário, finalize em casa.
+
+**Objetivo:** praticar variáveis, tipos de dados, arrays e laços de repetição criando um pequeno cadastro de alunos.
+
+**O que o programa deve fazer:**
+
+1. Perguntar ao professor (usuário) quantos alunos serão cadastrados, usando `Scanner`.
+2. Criar um array de `String` para os nomes e um array de `double` para as médias, com tamanho igual ao total informado.
+3. Para cada aluno, usando um `for`:
+   - Ler o nome do aluno.
+   - Ler 3 notas do aluno.
+   - Calcular e guardar a média das 3 notas.
+4. Ao final, imprimir uma lista com o nome e a média de cada aluno.
+
+> **Uso de IA:** ferramentas de IA só podem ser usadas para tirar dúvidas (entender conceitos, erros, mensagens de erro). Não peça para a IA escrever o código por você — o objetivo é praticar a lógica com suas próprias mãos.
+
+**Entrega:**
+
+1. Crie um repositório **público** no GitHub (pode reaproveitar o passo a passo da [Parte 2 — Git na prática](#parte-2--git-na-prática)) e envie o código do exercício para ele.
+2. Envie um e-mail para **daniel.placido@satc.edu.br** com o link do repositório.
+
+---
+
+## Aula 4 e 5 — Orientação a Objetos em Java + Tópicos Especiais
+
+### Materiais
+
+| Arquivo | Conteúdo |
+|---|---|
+| [aula03-oop-topicos-especiais.pdf](<Aula 03-04/aula03-oop-topicos-especiais.pdf>) | Slides da aula (31 slides) |
+| [exemplo-oop.zip](<Aula 03-04/exemplo-oop.zip>) | Projeto base usado nos exercícios (`Animal`, `Cachorro`, `Gato`, `Robo`, `Rastreavel`, `Main`) |
+
+Backend · Prof. Daniel Plácido · SATC 2026.1
+
+### Objetivo da aula
+
+Nesta aula vamos:
+
+1. Revisar os pilares da Orientação a Objetos (herança, encapsulamento, interfaces, polimorfismo), já conectados ao projeto `exemplo-oop`.
+2. Entender tópicos especiais de Java: a classe `Object`, construtores, o Garbage Collector, Collections e tratamento de exceções.
+3. Colocar tudo em prática evoluindo o projeto `exemplo-oop` com 5 exercícios progressivos, do mais simples ao desafio final.
+
+---
+
+### Parte 1 — Orientação a Objetos em Java
+
+#### Por que existe a Orientação a Objetos?
+
+Sem OOP, um programa vira uma pilha de variáveis soltas e funções separadas — difícil de saber o que pertence a quê.
+
+```java
+// ❌ Sem OOP
+String nomeCachorro;
+String racaCachorro;
+String nomeGato;
+String racaGato;
+// ... tudo solto e sem relação clara
+```
+
+```java
+// ✅ Com OOP
+class Animal {
+  String nome;
+  String raca;
+  // atributos e métodos juntos, organizados num único lugar
+}
+```
+
+A OOP agrupa dados e comportamentos relacionados dentro de uma classe. Isso facilita reaproveitar código (herança), proteger dados (encapsulamento) e organizar sistemas grandes em pedaços menores e compreensíveis.
+
+#### O que é Orientação a Objetos?
+
+- **OOP** (Object Oriented Programming) organiza o código em torno de **objetos**, não de funções soltas.
+- Cada objeto representa algo do mundo real (ou um conceito abstrato) com **dados** (atributos) e **comportamentos** (métodos).
+- A **classe** é o "molde"; o **objeto** é a coisa concreta criada a partir dela — cada objeto criado é uma **instância** da classe.
+- Exemplo clássico: a classe `Cachorro` descreve *cor*, *raça* e *peso* (atributos) e *correr*, *comer*, *latir* (métodos).
+- Cada instância guarda seus próprios valores: o Cachorro "Paçoca" e o Cachorro "Plaquinha" compartilham a mesma estrutura, mas têm dados diferentes.
+
+#### Classes, atributos, métodos e `this`
+
+- **Atributos** = variáveis dentro da classe. **Métodos** = funções dentro da classe.
+- `new NomeDaClasse()` cria um novo objeto (instância) daquela classe.
+- `this` refere-se ao próprio objeto dentro de um método — útil quando o parâmetro tem o mesmo nome do atributo.
+
+```java
+public class Animal {
+    private String nome;
+
+    public void setNome(String nome) {
+        // this.nome = atributo da classe
+        // nome      = parâmetro recebido
+        this.nome = nome;
+    }
+}
+```
+
+#### Herança — `extends`
+
+- Uma classe pode herdar atributos e métodos de outra usando `extends`.
+- No projeto: `Cachorro` e `Gato` herdam tudo de `Animal` (nome, raça, dono, posição, `emitirSom`...).
+- `super(...)` chama o construtor da superclasse — é assim que a subclasse aproveita a inicialização que o pai já sabe fazer, sem reescrevê-la.
+- Fora de um construtor, `super.metodo()` chama a versão do método implementada no pai, mesmo que você tenha sobrescrito esse método na subclasse.
+
+```java
+public class Animal {
+    private String nome;
+    public Animal(String nome) { this.nome = nome; }
+}
+public class Cachorro extends Animal {
+    public Cachorro(String nome) { super(nome); }
+}
+```
+
+#### Encapsulamento e modificadores de acesso
+
+- **Encapsulamento** = esconder atributos com `private` e liberar acesso controlado via getters e setters.
+- `private`: só a própria classe acessa.
+- `protected`: acessa dentro do mesmo *package* (uma "pasta" que agrupa classes relacionadas).
+- `public`: acessa de qualquer lugar.
+- Por que fazer isso? Porque assim a classe controla suas próprias regras — ninguém de fora consegue colocar um nome vazio ou um valor inválido diretamente.
+
+```java
+public class Animal {
+    private String nome;
+
+    public String getNome() { return nome; }
+
+    public void setNome(String nome) {
+        if (nome.isEmpty()) return;
+        this.nome = nome;
+    }
+}
+```
+
+#### Getters e Setters (convenção)
+
+- **Getter** = método que só devolve o valor de um atributo privado. **Setter** = método que só altera esse valor (podendo validar antes).
+- Convenção de nomes: `getNomeDoAtributo()` e `setNomeDoAtributo(valor)`.
+- Exceção da convenção: atributos `boolean` geralmente usam `isNomeDoAtributo()` no lugar de `getNomeDoAtributo()` (ex.: `isAtivo()` em vez de `getAtivo()`).
+- Isso não é regra do compilador — é convenção da comunidade Java, mas frameworks e outros programadores esperam esse padrão.
+
+```java
+public class Funcionario {
+    private String nome;
+    private double salario;
+    private boolean ativo;
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public void setSalario(double salario) {
+        if (salario < 0) return;
+        this.salario = salario;
+    }
+
+    // boolean usa "is", não "get"
+    public boolean isAtivo() { return ativo; }
+}
+```
+
+#### Interfaces e Polimorfismo
+
+- **Interface** define métodos que quem a implementa é obrigado a escrever (`implements`). É como um contrato: "toda classe que assinar este contrato precisa ter estes métodos".
+- `Rastreavel` é uma interface com o método `rastrear()`.
+- `Animal` (e suas subclasses) e `Robo` implementam `Rastreavel` — mesmo sendo bem diferentes entre si.
+- **Polimorfismo**: uma lista de `Rastreavel` pode guardar `Cachorro`, `Gato` e `Robo` ao mesmo tempo, e cada um responde `rastrear()` do seu jeito.
+
+> 🎮 **Analogia:** um controle remoto de TV e um de ar-condicionado são bem diferentes por dentro, mas os dois têm um botão "ligar". Polimorfismo é isso: comportamentos diferentes por trás do mesmo "botão" (método).
+
+```java
+public interface Rastreavel {
+    public String rastrear();
+}
+
+public class Robo implements Rastreavel {
+    private String posicao;
+    public String rastrear() {
+        return posicao;
+    }
+}
+```
+
+#### Generics — o que significam os `<>`
+
+- Coisas como `ArrayList<Rastreavel>` ou `HashMap<String, Rastreavel>` usam `<>` para dizer qual tipo de dado vai dentro daquela estrutura.
+- É como rotular uma caixa: "essa caixa só guarda `Animal`" evita que alguém guarde uma `String` ali dentro por engano.
+- Sem generics, o Java deixaria colocar qualquer coisa lá dentro, e o erro só apareceria em tempo de execução — bem mais difícil de achar.
+
+```java
+List<String> nomes = new ArrayList<>();
+nomes.add("Plaquinha");
+// nomes.add(123); ❌ não compila!
+
+Map<String, Animal> animais = new HashMap<>();
+animais.put("Plaquinha", plaquinha);
+Animal a = animais.get("Plaquinha"); // já vem como Animal, sem cast
+```
+
+#### Recapitulando: Classes x Classes Abstratas x Interfaces
+
+| Estrutura | `new` | Métodos | Atributos | Herança | Palavra-chave |
+|---|---|---|---|---|---|
+| Classes regulares | Sim | Sim | Sim | Sim | `class` |
+| Classes abstratas | Não | Sim | Sim | Sim | `abstract class` |
+| Interfaces | Não | Sim | Não | Não | `interface` |
+
+> 💡 Interface = 100% abstrata (nenhum método pronto). Classe abstrata pode misturar métodos prontos e métodos abstratos.
+
+---
+
+### Parte 2 — Tópicos Especiais em Java
+
+#### A classe `Object`
+
+- Toda classe em Java herda — de forma implícita, mesmo sem escrever `extends` — da classe `Object`.
+- `toString()`: sem sobrescrever, o padrão é algo pouco legível como `Animal@1a2b3c`. Sobrescrevendo (com `@Override`), você decide o que aparece no console.
+- `equals()`: por padrão, compara se é o mesmo objeto na memória. Sobrescrevendo, você decide o que conta como "igual" (ex.: mesmo nome).
+- **Regra de ouro:** se você sobrescrever `equals()`, sobrescreva `hashCode()` também — `HashMap` e `HashSet` usam os dois por trás dos panos para funcionar direito.
+
+```java
+public class Animal {
+    private String nome;
+    private String raca;
+
+    @Override
+    public String toString() {
+        return nome + " (" + raca + ")";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Animal)) return false;
+        Animal outro = (Animal) obj;
+        return this.nome.equals(outro.nome);
+    }
+}
+// System.out.println(plaquinha);
+// Plaquinha (Pincher)  ✅ não mais Animal@1a2b3c
+```
+
+#### Construtores
+
+- Construtor = método especial chamado no momento do `new`, com o mesmo nome da classe e sem tipo de retorno.
+- Se você não escrever nenhum, o Java gera um construtor padrão vazio (**NoArgsConstructor**). Ao escrever qualquer construtor, esse padrão automático deixa de existir.
+- Assim como métodos, construtores podem ser **sobrecarregados**: a mesma classe pode ter várias versões de construtor, cada uma com parâmetros diferentes.
+- `this(...)` dentro de um construtor chama outro construtor da mesma classe — útil para não repetir lógica de inicialização.
+
+```java
+public class Pessoa {
+    private String nome;
+    private int idade;
+
+    // construtor sem argumentos
+    public Pessoa() {
+        this("Sem nome", 0);
+    }
+
+    // construtor com todos os argumentos
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+
+Pessoa p1 = new Pessoa();
+Pessoa p2 = new Pessoa("Ana", 30);
+```
+
+#### ⚠️ Java não tem "destrutor" como C++
+
+A sintaxe `~NomeClasse()` é de C++ — **não existe em Java**. Se aparecer em algum material antigo, é um erro de cópia.
+
+- Em Java, a memória é gerenciada pelo **Garbage Collector (GC)** automaticamente.
+- Existe o método `finalize()` (herdado de `Object`), mas é *deprecated* — não deve ser usado.
+- Na prática: você não escreve código para "destruir" um objeto em Java. Só deixa de referenciá-lo.
+
+#### O que é o Garbage Collector?
+
+- Toda vez que você faz `new Animal()`, o Java reserva um espacinho de memória (RAM) para guardar aquele objeto.
+- Uma variável (como `plaquinha`) não é o objeto — ela é uma **referência**, um "post-it" que aponta para onde o objeto está guardado na memória.
+- Quando nenhuma variável aponta mais para um objeto, aquele objeto vira "lixo" — ninguém mais consegue acessá-lo.
+- O **Garbage Collector** ("coletor de lixo") é uma parte do Java que roda em segundo plano, encontra esses objetos sem dono e libera a memória automaticamente.
+- É por isso que você nunca precisa (e nem consegue) escrever código para "destruir" um objeto — diferente de linguagens como C++.
+
+```java
+Animal plaquinha = new Animal();
+// ... uso normal do objeto ...
+plaquinha = null;   // ninguém mais aponta pra cá
+// 🗑 o Garbage Collector recolhe a memória, em algum momento depois
+```
+
+#### Generics já explicado acima — Collections
+
+Guardando vários objetos: por que não usar só um array? Porque array tem tamanho fixo — depois de criado, não dá para adicionar ou remover posições. *Collections* resolvem isso.
+
+| Estrutura | O que garante | Implementação comum |
+|---|---|---|
+| `List` | Ordenada, aceita duplicados | `ArrayList`, `LinkedList` |
+| `Set` | Sem elementos duplicados | `HashSet` |
+| `Queue` | Fila — organiza por ordem de processamento | `PriorityQueue` |
+| `Map` | Chave → valor (não é Collection, mas tratado junto) | `HashMap` |
+
+#### Usando uma `List` de verdade
+
+- `ArrayList` é a implementação de `List` mais usada no dia a dia — funciona como uma "gaveta" que cresce sob demanda.
+- `add()` insere, `get(indice)` busca pela posição, `contains()` verifica se existe, `remove()` tira um elemento, `size()` diz quantos existem.
+- O for-each (`for (Tipo item : lista)`) percorre todos os elementos sem precisar controlar índice manualmente.
+
+```java
+List<String> nomes = new ArrayList<>();
+nomes.add("Plaquinha");
+nomes.add("Fumaça");
+nomes.add("R2D2");
+
+System.out.println(nomes.contains("Fumaça"));
+// true
+
+nomes.remove("R2D2");
+System.out.println(nomes.size());
+// 2
+
+for (String nome : nomes) {
+    System.out.println(nome);
+}
+// Plaquinha
+// Fumaça
+```
+
+#### O que é uma exceção?
+
+- Exceção é um "aviso de erro" que o Java lança quando algo impede o código de continuar normalmente (ex.: dividir por zero, acessar posição que não existe).
+- Se ninguém tratar a exceção, o programa **para imediatamente** e imprime um *stack trace* (o "rastro" de onde o erro aconteceu).
+- **Checked**: verificadas em tempo de compilação — o próprio compilador obriga a tratar ou declarar com `throws` (ex.: `IOException`, ao mexer com arquivos).
+- **Unchecked**: só aparecem em tempo de execução, geralmente por bugs de lógica (ex.: `ArrayIndexOutOfBoundsException`).
+
+```java
+int[] numeros = {1, 2, 3};
+System.out.println(numeros[5]);
+
+// 💥 Programa para e imprime:
+// Exception in thread "main"
+// java.lang.ArrayIndexOutOfBoundsException:
+//   Index 5 out of bounds for length 3
+//   at Main.main(Main.java:2)
+```
+
+#### Tratando exceções: `throw` e `try-catch-finally`
+
+- `throw` dispara uma exceção manualmente quando uma regra do seu próprio código é quebrada.
+- `try/catch` captura o erro e evita que o programa pare de rodar — o que está dentro do `catch` só roda se der erro no `try`.
+- `finally` roda **sempre** — deu erro ou não. É o lugar certo para liberar recursos (fechar um arquivo, uma conexão, etc.).
+- `getMessage()` devolve o texto que você passou ao criar a exceção.
+
+```java
+public int dividir(int a, int b) {
+    if (b == 0) {
+        throw new ArithmeticException("Impossível dividir por zero!");
+    }
+    return a / b;
+}
+
+try {
+    dividir(10, 0);
+} catch (ArithmeticException e) {
+    System.out.println(e.getMessage());
+} finally {
+    System.out.println("Fim da tentativa.");
+}
+```
+
+---
+
+### Parte 3 — Prática: evoluindo o projeto exemplo-oop
+
+O enunciado completo dos exercícios — regras, resultado esperado e subexercícios de entrega — está no arquivo [`EXERCICIOS.md`](<Aula 03-04/exemplo-oop/EXERCICIOS.md>), dentro do próprio projeto `exemplo-oop`.
+
+---
+
+### Glossário rápido
+
+| Termo | Significado |
+|---|---|
+| **Classe** | Molde que descreve os atributos e métodos de um tipo de objeto. |
+| **Objeto / Instância** | A "coisa" concreta criada a partir de uma classe (via `new`), com valores próprios. |
+| **Atributo** | Uma variável que vive dentro de uma classe — um dado do objeto. |
+| **Método** | Uma função que vive dentro de uma classe — um comportamento do objeto. |
+| **`this`** | Dentro de um método, refere-se ao próprio objeto que está sendo usado. |
+| **Herança (`extends`)** | Uma classe reaproveita atributos e métodos de outra, especializando-a. |
+| **Encapsulamento** | Esconder atributos (`private`) e liberar acesso controlado via getters/setters. |
+| **Interface (`implements`)** | Um "contrato" de métodos que a classe é obrigada a implementar. |
+| **Classe abstrata** | Não pode ser instanciada (sem `new`) — serve de base para outras classes. |
+| **Polimorfismo** | O mesmo método se comporta de forma diferente dependendo do objeto que o chama. |
+| **`Object`** | Classe da qual toda classe Java herda implicitamente (dá `toString`, `equals`...). |
+| **Construtor** | Método especial chamado no momento do `new`, usado para inicializar o objeto. |
+| **Garbage Collector (GC)** | Mecanismo do Java que libera automaticamente a memória de objetos sem referência. |
+| **Generics (`<>`)** | Indicam qual tipo de dado uma estrutura (`List`, `Map`...) vai guardar. |
+| **Collection** | Estrutura para guardar vários objetos: `List`, `Set`, `Queue` (e `Map`, tratado junto). |
+| **Exceção** | Aviso de erro lançado quando algo impede a execução normal do programa. |
+| **Checked / Unchecked** | Exceções verificadas em tempo de compilação vs. em tempo de execução. |
+| **`try` / `catch` / `finally`** | Blocos que capturam, tratam e sempre executam (finally) ao redor de código que pode falhar. |
+
+**Próxima aula:** Avaliação N1, cobrindo o conteúdo desta aula.
+
+## Aula 6 — Avaliação N1
+
+Prova teórica cobrindo Arquitetura da Web, HTTP e Orientação a Objetos em Java (Aulas 2 a 5). Sem materiais adicionais.
+
+**Próxima aula:** Web Services + Protocolo HTTP/JSON.
+
+## Aula 7 — Web Services + Protocolo HTTP/JSON
+
+**Materiais:**
+
+| Arquivo | Conteúdo |
+|---|---|
+| [aula06-webservices-http-json.pdf](<Aula 06/aula06-webservices-http-json.pdf>) | P6+P7 — Web Services, Protocolo HTTP, Formatos de Dados/JSON e Arquiteturas |
+
+### Objetivo da aula
+
+Entender o que é um Web Service, como o protocolo HTTP estrutura a conversa entre cliente e servidor, e como JSON padroniza os dados trocados nessa conversa — a base de tudo que vamos construir em REST a partir da próxima aula.
+
+---
+
+### Parte 1 — Web Services
+
+#### O que é um Web Service?
+
+- É um serviço — uma funcionalidade — acessível pela Web, usando a internet como meio de comunicação.
+- Permite que sistemas diferentes, em linguagens e plataformas diferentes, conversem entre si (ex.: um app mobile, um site em JavaScript e um sistema desktop em Java podem consumir o mesmo Web Service).
+- Segue o mesmo modelo cliente-servidor da Aula 2: quem oferece o serviço é o servidor, quem usa é o cliente.
+
+#### Três características centrais
+
+| Característica | O que significa |
+|---|---|
+| **Interoperabilidade** | Funciona com diferentes tipos de clientes (Java, PHP, .NET, mobile...) |
+| **Portabilidade** | Pode mudar de ambiente/servidor com impacto mínimo para quem já integra |
+| **Escalabilidade** | Atende múltiplos usuários simultâneos, crescendo com a demanda |
+
+#### Web Service x Web API
+
+"Web Service" é o termo mais amplo (inclui SOAP, REST e outros modelos). "Web API" é o termo mais usado hoje para descrever serviços que fornecem dados para outros sistemas através de um contrato público. Na prática do mercado, os dois termos são usados quase como sinônimos.
+
+> 🌍 **Exemplos do dia a dia:** Google Maps (mapas), OpenWeather (previsão do tempo), OpenAI (LLMs), GitHub (repositórios), Stripe (pagamentos).
+
+---
+
+### Parte 2 — Protocolo HTTP
+
+#### O que é HTTP?
+
+- HTTP (*HyperText Transfer Protocol*) define como cliente e servidor trocam mensagens na Web.
+- Funciona no modelo requisição-resposta: o cliente envia uma requisição, o servidor devolve uma resposta.
+- É **stateless** (sem estado): cada requisição é independente — o servidor não guarda memória da anterior por padrão.
+- **HTTPS** = HTTP + uma camada de criptografia (TLS), protegendo os dados no trajeto.
+
+#### Anatomia de uma requisição e de uma resposta
+
+```
+# Requisição
+POST /produtos HTTP/1.1
+Host: api.exemplo.com
+Content-Type: application/json
+
+{ "nome": "Mouse Gamer", "preco": 149.90 }
+
+# Resposta
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+{ "id": 101, "nome": "Mouse Gamer", "preco": 149.90 }
+```
+
+Uma requisição tem **método**, **caminho (path)**, **headers** e, quando necessário, **corpo (body)**. Uma resposta tem **linha de status**, **headers** e **corpo**.
+
+#### Métodos HTTP mais usados
+
+| Método | Para que serve | Envia corpo? | Idempotente? |
+|---|---|---|---|
+| `GET` | Buscar/ler um recurso existente | Não | Sim |
+| `POST` | Criar um novo recurso | Sim | Não |
+| `PUT` | Substituir um recurso inteiro | Sim | Sim |
+| `PATCH` | Atualizar parte de um recurso | Sim | Não (geralmente) |
+| `DELETE` | Remover um recurso existente | Geralmente não | Sim |
+
+> 💡 **Idempotência:** repetir a mesma requisição várias vezes tem o mesmo efeito de fazer uma única vez. Importa na prática — se a internet cair e o cliente reenviar a requisição, o comportamento precisa ser previsível.
+
+#### Headers HTTP comuns
+
+| Header | Para que serve |
+|---|---|
+| `Content-Type` | Formato dos dados enviados no corpo (ex.: `application/json`) |
+| `Accept` | Formato de resposta que o cliente aceita |
+| `Authorization` | Credenciais de acesso do cliente (ex.: `Bearer <token>`) |
+| `User-Agent` | Identifica o cliente que fez a chamada |
+| `Cache-Control` | Regras de cache da resposta |
+
+#### Códigos de status HTTP
+
+| Faixa | Categoria |
+|---|---|
+| `1xx` | Informational — requisição recebida, processo continua |
+| `2xx` | Sucesso — requisição atendida |
+| `3xx` | Redirecionamento — é preciso ir a outro endereço |
+| `4xx` | Erro do cliente — o cliente pediu algo errado |
+| `5xx` | Erro do servidor — o servidor falhou ao processar |
+
+| Código | Significado |
+|---|---|
+| `200 OK` | Sucesso |
+| `201 Created` | Um novo recurso foi criado |
+| `204 No Content` | Sucesso, sem corpo de resposta (comum em `DELETE`) |
+| `400 Bad Request` | Dados enviados pelo cliente estão incorretos |
+| `401 Unauthorized` | Faltam credenciais válidas |
+| `403 Forbidden` | Cliente conhecido, mas sem permissão |
+| `404 Not Found` | O recurso pedido não existe |
+| `500 Internal Server Error` | Algo quebrou do lado do servidor |
+
+#### Testando na prática: curl e Postman
+
+```bash
+# GET
+curl -X GET https://api.exemplo.com/produtos/101 \
+  -H "Accept: application/json"
+
+# POST + JSON
+curl -X POST https://api.exemplo.com/produtos \
+  -H "Content-Type: application/json" \
+  -d '{"nome": "Mouse Gamer", "preco": 149.90}'
+```
+
+**Postman** é uma ferramenta gráfica para montar, enviar e organizar requisições HTTP sem terminal — permite salvar *coleções* (conjuntos de requisições documentadas) e *environments* (variáveis reutilizáveis, como URL base e token).
+
+#### Contrato de API
+
+Um contrato de API define o que o cliente deve enviar e o que deve esperar de volta: **rota**, **método**, **formato dos dados** e **status esperado** em cada cenário. Documentar isso permite que cliente e servidor sejam construídos em paralelo, por times diferentes, sem travar um no outro — é a base do que veremos em REST.
+
+---
+
+### Parte 3 — Formatos de Dados e JSON
+
+#### Por que padronizar?
+
+Web Services são acessados por plataformas diferentes (Java, JavaScript, Python, mobile...). Sem um formato combinado, cada sistema entenderia os dados de um jeito diferente. Hoje, o formato mais usado em APIs web é o **JSON**.
+
+| Formato | Características | Onde é comum |
+|---|---|---|
+| **JSON** | Leve, legível, baseado em objetos e arrays | APIs REST modernas |
+| **XML** | Verboso, baseado em tags, suporta esquemas rígidos | Integrações corporativas, SOAP |
+| **YAML** | Legível por humanos, baseado em indentação | Arquivos de configuração |
+| **CSV** | Tabular simples, separado por vírgulas | Planilhas, exportação de dados |
+| **Plain Text** | Texto puro, sem estrutura definida | Logs e respostas simples |
+
+#### Sintaxe básica do JSON
+
+```json
+{
+  "nome": "Mouse Gamer",
+  "preco": 149.90,
+  "disponivel": true,
+  "categoria": null
+}
+```
+
+Tipos básicos: texto (`string`), número, booleano (`true`/`false`) e nulo (`null`). Chaves são sempre strings entre aspas duplas.
+
+#### Objetos aninhados e arrays
+
+```json
+{
+  "id": 55,
+  "cliente": { "nome": "Ana", "vip": true },
+  "itens": [
+    { "produto": "Mouse Gamer", "qtd": 1 },
+    { "produto": "Teclado Mecânico", "qtd": 1 }
+  ]
+}
+```
+
+Um array (entre `[ ]`) guarda vários valores, inclusive vários objetos — é o que permite representar, por exemplo, um pedido com vários produtos dentro.
+
+#### JSON em Java com Jackson
+
+```java
+public class Produto {
+    private String nome;
+    private double preco;
+    // getters e setters
+}
+
+ObjectMapper mapper = new ObjectMapper();
+
+// Java -> JSON
+String json = mapper.writeValueAsString(produto);
+
+// JSON -> Java
+Produto p = mapper.readValue(json, Produto.class);
+```
+
+`Jackson` é o padrão de mercado para converter entre objetos Java e JSON. Frameworks como Spring Web já usam essa conversão automaticamente dentro dos controllers.
+
+---
+
+### Parte 4 — Arquiteturas de Web Services
+
+| Estilo | Formato comum | Melhor uso |
+|---|---|---|
+| **SOAP** | XML | Integrações corporativas e contratos formais |
+| **REST** | JSON | CRUD e APIs web tradicionais |
+| **gRPC** | Protobuf | Comunicação de alta performance entre microsserviços |
+| **GraphQL** | JSON | Consultas flexíveis para múltiplos clientes |
+| **WebSocket** | Frames | Comunicação bidirecional em tempo real |
+| **Webhook** | JSON | Notificações assíncronas orientadas a eventos |
+
+**REST em poucas palavras** (prévia — aprofundamos na próxima aula): organiza a API em torno de recursos, usa os verbos HTTP já vistos e é stateless. É a arquitetura mais usada em APIs web hoje.
+
+**WebSocket** não é uma arquitetura de API como REST/SOAP — é um protocolo de comunicação bidirecional e persistente, útil para chats, jogos online, notificações e dashboards em tempo real.
+
+#### Frameworks e o primeiro endpoint
+
+No curso, vamos construir a API REST em **Java com Spring Web**. Outras opções no mercado: NestJS (TypeScript), Express (Node.js), Flask (Python), Laravel (PHP).
+
+```java
+@RestController
+public class HelloWorldController {
+
+    @GetMapping("/")
+    public String olaMundo() {
+        return "Olá mundo";
+    }
+}
+```
+
+#### Microsserviços x Monolitos
+
+**Monolitos** são sistemas completos, com múltiplos domínios, em uma única aplicação. **Microsserviços** dividem o sistema em serviços menores e independentes que trabalham em conjunto. Nenhuma abordagem é "melhor" de forma absoluta — depende do tamanho e complexidade do time e do produto. No curso, começamos com uma API única (um pequeno monolito) antes de falar em integração entre serviços.
+
+#### Onde um Web Service roda?
+
+| Infraestrutura | Descrição |
+|---|---|
+| **Servidor físico** | Máquina própria, configurada e mantida manualmente |
+| **VPS** | Servidor virtual privado, contratado de um provedor |
+| **Nuvem (Cloud)** | AWS, Azure, Google Cloud — infraestrutura sob demanda |
+
+---
+
+### Exercícios
+
+1. **Interpretando um contrato de API** — a partir de um contrato dado (`PUT /pedidos/{id}/cancelar`), identificar método, rota, corpo esperado e status de sucesso.
+2. **Convertendo um objeto Java em JSON** — usar o Jackson (`ObjectMapper`) para serializar e desserializar a classe `Produto`.
+3. **Desafio final: montando seu primeiro contrato de API** — descrever o contrato completo (rota, método, corpo e status) de uma API de lista de tarefas (criar, listar, concluir). Este contrato será implementado de verdade nas próximas aulas, com Spring Web.
+
+---
+
+### Glossário rápido
+
+| Termo | Significado |
+|---|---|
+| **Web Service** | Serviço acessível pela Web, que permite a comunicação entre sistemas diferentes. |
+| **Web API** | Termo atual para um Web Service que fornece dados via um contrato público. |
+| **HTTP** | Protocolo de requisição-resposta usado para trocar mensagens na Web. |
+| **Stateless** | Cada requisição é independente; o servidor não guarda memória da anterior. |
+| **Idempotência** | Repetir a mesma requisição várias vezes tem o mesmo efeito de fazer uma vez. |
+| **Header** | Metadado de uma requisição/resposta HTTP (ex.: `Content-Type`). |
+| **Status code** | Código de três dígitos que resume o resultado de uma requisição HTTP. |
+| **Contrato de API** | Definição de rota, método, formato e status esperado entre cliente e servidor. |
+| **JSON** | Formato de dados leve baseado em objetos e arrays, padrão em APIs REST. |
+| **Jackson** | Biblioteca Java padrão de mercado para converter entre objetos e JSON. |
+| **REST** | Arquitetura de API baseada em recursos e nos verbos HTTP. |
+| **WebSocket** | Protocolo de comunicação bidirecional e persistente, para tempo real. |
+| **Monolito** | Sistema completo, com múltiplos domínios, em uma única aplicação. |
+| **Microsserviço** | Serviço menor e independente, que trabalha em conjunto com outros. |
+
+**Próxima aula:** Padrões de Arquitetura + Arquitetura REST — vamos implementar, na prática, os contratos de API que projetamos hoje.
+
+## Aula 8 — Padrões de Arquitetura + Arquitetura REST
+
+### Materiais
+
+| Arquivo | Conteúdo |
+|---|---|
+| [aula07-padroes-arquitetura-rest.pdf](<Aula 07/aula07-padroes-arquitetura-rest.pdf>) | P8+P9 — Protocolos de rede, HTTP por dentro e Arquitetura REST com Spring Web |
+
+### Objetivo da aula
+
+Descer uma camada abaixo do HTTP (TCP/IP, DNS) para entender o que sustenta toda comunicação na Web, ver como o próprio HTTP evoluiu, e então subir até a prática: construir uma API REST de verdade com Spring Web, em camadas.
+
+---
+
+### Parte 1 — Padrões de Arquitetura
+
+#### Os protocolos por trás de cada requisição
+
+- **TCP/IP** cuidam do endereçamento e da transmissão dos pacotes de dados pela rede — TCP garante integridade, ordem e entrega; IP cuida do roteamento pelo endereço IP.
+- **DNS** (*Domain Name System*) traduz nomes de domínio (`exemplo.com.br`) em endereços IP (`20.30.2.1`), antes mesmo da primeira requisição HTTP.
+- **HTTP/HTTPS** cuidam do tráfego de mensagens entre as aplicações — a camada que já vimos na Aula 7.
+
+> 🧱 **A Web em camadas:** HTML/CSS/JS/Web APIs no topo — HTTP (camada de aplicação) — TLS (se HTTPS) — TCP (entrega) — DNS/IP (nomes e roteamento).
+
+#### HTTP por dentro: anatomia revisitada
+
+```
+POST /login HTTP/1.1
+Host: example.com
+Content-Type: application/json
+Connection: keep-alive
+
+{"user": "teste", "password": "123456"}
+```
+
+- **Request Line:** método + caminho + versão do HTTP.
+- **Host** continua obrigatório mesmo com a conexão já estabelecida — identifica a qual aplicação a requisição se destina naquele servidor.
+- **Connection: keep-alive** pede para reaproveitar a mesma conexão TCP em requisições futuras, evitando o custo de abrir uma nova a cada vez.
+
+#### Cabeçalhos HTTP comuns
+
+| Cabeçalho | Descrição |
+|---|---|
+| `Host` | Nome do servidor de destino |
+| `Content-Length` | Tamanho do corpo da mensagem, em bytes |
+| `Content-Type` | Tipo do corpo da mensagem enviada |
+| `Accept` | Tipos de conteúdo que o cliente aceita receber |
+| `User-Agent` | Identificação do cliente que fez a chamada |
+| `Authorization` | Credenciais de autenticação |
+| `Cookie` | Dados de sessão do cliente |
+| `Connection` | Controle de conexão (`keep-alive` ou `close`) |
+| `Cache-Control` | Controle de cache da resposta |
+| `Last-Modified` | Data/hora da última modificação do recurso |
+
+> 💡 **Content-Type x Accept:** `Content-Type` descreve o formato do que estou *enviando*; `Accept` descreve os formatos que aceito *receber* de volta.
+
+#### Métodos seguros e idempotentes
+
+- **Seguros** (não alteram o servidor): `GET`, `HEAD`, `OPTIONS`.
+- **Idempotentes** (mesmo efeito ao repetir): `GET`, `PUT`, `DELETE`.
+- **`POST`** normalmente não é nem seguro, nem idempotente.
+
+#### 401 x 403
+
+| Código | Significado | Exemplo |
+|---|---|---|
+| `401 Unauthorized` | Cliente não se autenticou corretamente | Token inválido ou ausente |
+| `403 Forbidden` | Cliente autenticado, mas sem permissão | Usuário comum acessando rota administrativa |
+
+#### Cache HTTP
+
+```
+HTTP/1.1 200 OK
+Cache-Control: max-age=3600
+ETag: "produto-10-v3"
+```
+
+`Cache-Control` define por quanto tempo uma resposta pode ser reaproveitada sem nova requisição; `ETag` identifica uma versão específica do recurso.
+
+#### Comparação entre versões do HTTP
+
+| Versão | Ano | Principais mudanças |
+|---|---|---|
+| HTTP/1.0 | 1996 | Pouco/nenhum suporte a compressão; só `GET`, `HEAD` e `POST` |
+| HTTP/1.1 | 1997 | Mais métodos e status codes, Keep-Alive, compressão do corpo |
+| HTTP/2 | 2015 | Protocolo binário, compressão de cabeçalho, multiplexação |
+| HTTP/3 | 2018 | Troca TCP+TLS por UDP+QUIC, sem bloqueio por perda de pacote, TLS 1.3 obrigatório |
+
+#### HTTPS
+
+HTTPS é o HTTP com uma camada de segurança **TLS** (*Transport Layer Security*) por cima. A negociação da criptografia usa chaves públicas e acontece na fase de conexão. Roda por padrão na porta **443** (o HTTP puro roda na 80). TLS é a versão mais recente do antigo SSL — termo que ainda aparece bastante, mesmo se referindo ao TLS atual.
+
+---
+
+### Parte 2 — Arquitetura REST com Spring Web
+
+#### O que é Spring?
+
+Spring é um ecossistema de frameworks para desenvolvimento em Java, com foco em produtividade, organização e baixo acoplamento. É muito usado para APIs REST, sistemas corporativos e microsserviços. O módulo **Spring Web** facilita especificamente a criação de aplicações HTTP.
+
+- **Spring Framework** fornece os módulos e a base do ecossistema.
+- **Spring Boot** simplifica configuração e inicialização — com servidor web (Tomcat) já embutido.
+
+#### Dependências comuns de um projeto Spring Boot
+
+| Dependência | Para que serve |
+|---|---|
+| `spring-boot-starter-web` | Cria APIs HTTP/REST com Spring MVC, servidor embutido |
+| `spring-boot-starter-validation` | Habilita anotações de validação (`@NotBlank`, `@Positive`...) |
+| `spring-boot-starter-data-jpa` | Persistência em banco SQL, com JPA e Hibernate |
+| `spring-boot-devtools` | Recarrega a aplicação automaticamente durante o desenvolvimento |
+
+#### Estrutura básica de projeto
+
+```
+src/main/java/com/exemplo/app/
+├── controller/
+├── service/
+├── repository/
+├── model/
+├── dto/
+└── Application.java
+```
+
+| Camada | Responsabilidade |
+|---|---|
+| **Controller** | Recebe a requisição HTTP e monta a resposta |
+| **Service** | Concentra as regras de negócio |
+| **Repository** | Acessa o banco de dados |
+| **Model / Entity** | Representa os dados da aplicação |
+| **DTO** | Estrutura os dados de entrada e saída da API |
+
+#### Classe principal e Controller
+
+```java
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+
+@RestController
+@RequestMapping("/produtos")
+public class ProdutoController {
+    // os endpoints entram aqui
+}
+```
+
+#### Mapeando endpoints e parâmetros
+
+```java
+@GetMapping
+public List<Produto> listar() {
+    return service.listar();
+}
+
+@PostMapping
+public Produto criar(@RequestBody Produto produto) {
+    return service.criar(produto);
+}
+
+@GetMapping("/{id}")
+public Produto buscarPorId(@PathVariable Long id) {
+    return service.buscarPorId(id);
+}
+
+@GetMapping("/buscar")
+public List<Produto> buscarPorNome(@RequestParam String nome) {
+    return service.buscarPorNome(nome);
+}
+```
+
+`@PathVariable` lê partes da própria URL; `@RequestParam` lê parâmetros da query string; `@RequestBody` converte o JSON recebido em objeto Java.
+
+#### ResponseEntity e injeção de dependência
+
+```java
+@DeleteMapping("/{id}")
+public ResponseEntity<Void> remover(@PathVariable Long id) {
+    service.remover(id);
+    return ResponseEntity.noContent().build();
+}
+
+@Service
+public class ProdutoService {
+    private final ProdutoRepository repository;
+
+    public ProdutoService(ProdutoRepository repository) {
+        this.repository = repository;
+    }
+}
+```
+
+`ResponseEntity` dá controle total sobre status, headers e corpo da resposta. `@Service` marca uma classe de regra de negócio; o Spring injeta a dependência pelo construtor automaticamente.
+
+#### Validação e tratamento de exceções
+
+```java
+public class ProdutoDTO {
+    @NotBlank
+    private String nome;
+
+    @Positive
+    private BigDecimal preco;
+}
+
+public Produto criar(@Valid @RequestBody ProdutoDTO dto) {
+    return service.criar(dto);
+}
+
+@RestControllerAdvice
+public class ApiExceptionHandler {
+    @ExceptionHandler(ProdutoNaoEncontradoException.class)
+    public ResponseEntity<String> tratarNaoEncontrado() {
+        return ResponseEntity.status(404).body("Produto não encontrado");
+    }
+}
+```
+
+`@Valid` ativa a validação do objeto recebido. `@RestControllerAdvice` centraliza o tratamento de erros, evitando repetir `try/catch` em cada controller.
+
+#### Configuração e o fluxo completo
+
+```properties
+# src/main/resources/application.properties
+spring.application.name=loja-api
+server.port=8080
+spring.datasource.url=jdbc:h2:mem:teste
+```
+
+**Fluxo de uma requisição:** Cliente envia requisição — Controller recebe a rota — Service aplica regras de negócio — Repository consulta/persiste dados — resposta volta como JSON com status HTTP.
+
+#### Boas práticas
+
+| Prática | Por quê |
+|---|---|
+| Separar responsabilidade entre camadas | Facilita manutenção, testes e leitura do código |
+| Evitar regra de negócio no controller | Controller só recebe e devolve — lógica fica no service |
+| Usar DTOs em vez de expor entidades | Evita acoplar o contrato da API à estrutura do banco |
+| Validar entradas recebidas pela API | Evita dados inválidos chegando até a regra de negócio |
+| Retornar códigos HTTP coerentes | Cliente reage corretamente sem precisar ler o corpo |
+
+---
+
+### Exercícios
+
+1. **401, 403 ou cache: qual se aplica?** — check rápido identificando o status code/cabeçalho correto para quatro cenários dados.
+2. **Construindo um endpoint de listagem e criação** — implementar `GET` e `POST` em `TarefaController`, com `TarefaService`, testando com curl/Postman.
+3. **Completando o CRUD de `/tarefas`** — adicionar `GET /{id}` e `DELETE /{id}`, `TarefaDTO` com validação, `ResponseEntity` com `204 No Content`, e um `@RestControllerAdvice` para a exceção de tarefa não encontrada.
+
+---
+
+### Glossário rápido
+
+| Termo | Significado |
+|---|---|
+| **TCP** | Protocolo que garante integridade, ordem e entrega dos pacotes de dados. |
+| **IP** | Protocolo responsável pelo roteamento dos pacotes pela rede. |
+| **DNS** | Sistema que traduz nomes de domínio em endereços IP. |
+| **Métodos seguros** | Métodos HTTP que não alteram o estado do servidor (`GET`, `HEAD`, `OPTIONS`). |
+| **401 Unauthorized** | Cliente não se autenticou corretamente. |
+| **403 Forbidden** | Cliente autenticado, mas sem permissão para a ação. |
+| **Cache-Control / ETag** | Cabeçalhos que evitam transferências desnecessárias entre cliente e servidor. |
+| **HTTPS / TLS** | HTTP com uma camada de criptografia por cima, na porta 443. |
+| **Spring Framework** | Base do ecossistema Spring: módulos, injeção de dependência, infraestrutura. |
+| **Spring Boot** | Simplifica configuração e inicialização, com servidor web embutido. |
+| **`@RestController`** | Anotação que marca uma classe como controller de API REST. |
+| **`@RequestMapping`** | Define o caminho base das rotas de um controller. |
+| **`@PathVariable`** | Lê uma parte da URL (ex.: o `id` em `/produtos/10`). |
+| **`@RequestParam`** | Lê um parâmetro da query string (ex.: `?nome=...`). |
+| **`@RequestBody`** | Converte o JSON do corpo da requisição em um objeto Java. |
+| **`ResponseEntity`** | Dá controle total sobre status, headers e corpo da resposta. |
+| **`@Service`** | Marca uma classe como responsável por regras de negócio. |
+| **DTO** | Objeto que estrutura os dados de entrada/saída da API, separado da entidade. |
+| **`@Valid`** | Ativa a validação de um objeto recebido, com base em suas anotações. |
+| **`@RestControllerAdvice`** | Centraliza o tratamento de exceções para todos os controllers. |
+
+**Próxima aula:** Persistência de Dados — conectando a API REST de hoje a um banco de dados de verdade.
+
+**Próxima aula:** Padrões de Arquitetura + Arquitetura REST — vamos implementar, na prática, os contratos de API que projetamos hoje.
