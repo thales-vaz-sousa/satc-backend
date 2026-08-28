@@ -22,9 +22,9 @@ public class ContaInvestimento extends Conta {
 
     public void aplicarRendimento(double percentual) {
 
-        if (percentual <= 0) {
-            throw new IllegalArgumentException("Percentual de rendimento precisa ser positivo");
-        }
+            if (percentual <= 0) {
+                throw new IllegalArgumentException("Percentual de rendimento precisa ser positivo");
+            }
 
         super.depositar(getSaldo() * percentual, "Rendimento (" + (percentual * 100) + "%)");
 

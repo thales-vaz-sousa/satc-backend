@@ -241,38 +241,38 @@ public class Main {
 
         ciNatan.depositar(1000);
 
-        String naoAplicavelRendimentoMensagem = "Não foi possivel aplicar rendimento: ";
-        String operacaoFinalizadaMensagem = "Operação de rendimento finalizada.";
+            String naoAplicavelRendimentoMensagem = "Não foi possivel aplicar rendimento: ";
+            String operacaoFinalizadaMensagem = "Operação de rendimento finalizada.";
 
-        try {
-            ciNatan.aplicarRendimento(0.10);
-        }
-        catch (IllegalArgumentException e) {
-            System.out.println(naoAplicavelRendimentoMensagem + e.getMessage());
-        }
-        finally {
-            System.out.println(operacaoFinalizadaMensagem);
-        }
+            try {
+                ciNatan.aplicarRendimento(0.10);
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println(naoAplicavelRendimentoMensagem + e.getMessage());
+            }
+            finally {
+                System.out.println(operacaoFinalizadaMensagem);
+            }
 
-        try {
-            ciNatan.aplicarRendimento(0);
-        }
-        catch (IllegalArgumentException e) {
-            System.out.println(naoAplicavelRendimentoMensagem + e.getMessage());
-        }
-        finally {
-            System.out.println(operacaoFinalizadaMensagem);
-        }
+            try {
+                ciNatan.aplicarRendimento(0);
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println(naoAplicavelRendimentoMensagem + e.getMessage());
+            }
+            finally {
+                System.out.println(operacaoFinalizadaMensagem);
+            }
 
-        try {
-            ciNatan.aplicarRendimento(-0.10);
-        }
-        catch (IllegalArgumentException e) {
-            System.out.println(naoAplicavelRendimentoMensagem + e.getMessage());
-        }
-        finally {
-            System.out.println(operacaoFinalizadaMensagem);
-        }
+            try {
+                ciNatan.aplicarRendimento(-0.10);
+            }
+            catch (IllegalArgumentException e) {
+                System.out.println(naoAplicavelRendimentoMensagem + e.getMessage());
+            }
+            finally {
+                System.out.println(operacaoFinalizadaMensagem);
+            }
 
         System.out.println();
 
