@@ -1,5 +1,6 @@
 package api.service;
 
+import java.time.LocalDate;
 import java.util.Collection;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Service;
 import api.dto.TarefaDTO;
 import api.model.Tarefa;
 import api.repository.TarefaRepository;
+import java.util.Comparator;
+
 
 // @Service: camada de regra de negócio -- o Controller fala com o Service,
 // nunca direto com o Repository.
@@ -22,7 +25,9 @@ public class TarefaService {
     }
 
     public Collection<Tarefa> listarTodas() {
-        return repository.listarTodas();
+        return repository.listarTodas().stream()
+                .sorted(Comparator.comparing(Tarefa::getDataPrazo))
+                .toList();
     }
 
     public Tarefa criar(TarefaDTO dto) {
@@ -36,10 +41,20 @@ public class TarefaService {
                 .orElseThrow(() -> new TarefaNaoEncontradaException(id));
     }
 
+    public Collection<Tarefa> buscarPorResponsavel(String responsavel) {
+        return repository.buscarPorResponsavel(responsavel);
+    }
+
     public void remover(Long id) {
         if (!repository.remover(id)) {
             throw new TarefaNaoEncontradaException(id);
         }
+    }
+
+    public Collection<Tarefa> listarAtrasadas() {
+        return repository.listarTodas().stream()
+                .filter(tarefa -> tarefa.getDataPrazo().isBefore(LocalDate.now()) & !tarefa.isConcluida())
+                .toList();
     }
 
     // Bônus -- fora do CRUD oficial da Aula 07 (que é só listar/criar/buscar/excluir).

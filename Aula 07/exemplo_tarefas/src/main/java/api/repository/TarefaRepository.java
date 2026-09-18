@@ -37,6 +37,12 @@ public class TarefaRepository {
         return comId;
     }
 
+    public Collection<Tarefa> buscarPorResponsavel(String responsavel) {
+        return tarefas.values().stream()
+                .filter(tarefa -> tarefa.getResponsavel().equals(responsavel))
+                .toList();
+    }
+
     public Optional<Tarefa> buscarPorId(Long id) {
         return Optional.ofNullable(tarefas.get(id));
     }
