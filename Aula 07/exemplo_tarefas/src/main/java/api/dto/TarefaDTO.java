@@ -4,6 +4,7 @@ package api.dto;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -49,6 +50,7 @@ public class TarefaDTO {
     // String -- LocalDate não tem "vazio" ou "espaços em branco", só existe ou é
     // null. Por isso aqui é @NotNull, não @NotBlank (que só compila em String).
     @NotNull(message = "Data de prazo é obrigatória")
+    @FutureOrPresent(message = "Data de prazo não pode ser no passado")
     private LocalDate dataPrazo;
 
     // ---------------------------------------------------------------- getters/setters
@@ -70,7 +72,7 @@ public class TarefaDTO {
         // Sem o "this.", a atribuição "titulo = titulo" não faria sentido (o
         // parâmetro se atribuiria a si mesmo, e o atributo nunca mudaria).
         this.titulo = titulo;
-    // Fim de setTitulo().
+        // Fim de setTitulo().
     }
 
     public String getResponsavel() {
