@@ -39,7 +39,7 @@ public class TarefaRepository {
 
     public Collection<Tarefa> buscarPorResponsavel(String responsavel) {
         return tarefas.values().stream()
-                .filter(tarefa -> tarefa.getResponsavel().equals(responsavel))
+                .filter(tarefa -> tarefa.getResponsavel().equalsIgnoreCase(responsavel))
                 .toList();
     }
 

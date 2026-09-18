@@ -49,6 +49,7 @@ public class TarefaDTO {
     // >>> VALIDAÇÃO: @NotNull é o equivalente do @NotBlank pra tipos que não são
     // String -- LocalDate não tem "vazio" ou "espaços em branco", só existe ou é
     // null. Por isso aqui é @NotNull, não @NotBlank (que só compila em String).
+    @NotNull(message = "Data de prazo é obrigatória")
     @FutureOrPresent(message = "Data de prazo não pode ser no passado")
     private LocalDate dataPrazo;
 

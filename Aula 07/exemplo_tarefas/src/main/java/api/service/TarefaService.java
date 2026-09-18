@@ -53,7 +53,7 @@ public class TarefaService {
 
     public Collection<Tarefa> listarAtrasadas() {
         return repository.listarTodas().stream()
-                .filter(tarefa -> tarefa.getDataPrazo().isBefore(LocalDate.now()) & !tarefa.isConcluida())
+                .filter(tarefa -> tarefa.getDataPrazo().isBefore(LocalDate.now()) && !tarefa.isConcluida())
                 .toList();
     }
 
