@@ -12,23 +12,15 @@ import org.springframework.http.HttpStatus;
 // Importa o tipo usado para responder com status e corpo.
 import org.springframework.http.ResponseEntity;
 // Importa a anotação de exclusão HTTP.
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.*;
 // Importa a anotação de leitura HTTP.
-import org.springframework.web.bind.annotation.GetMapping;
 // Importa a anotação para ler parâmetros do caminho.
-import org.springframework.web.bind.annotation.PathVariable;
 // Importa a anotação de criação HTTP.
-import org.springframework.web.bind.annotation.PostMapping;
 // Importa a anotação de atualização HTTP.
-import org.springframework.web.bind.annotation.PutMapping;
 // Importa a anotação que lê o corpo JSON.
-import org.springframework.web.bind.annotation.RequestBody;
 // Importa a anotação que libera chamadas de outras origens.
-import org.springframework.web.bind.annotation.CrossOrigin;
 // Importa a anotação que define o prefixo das rotas.
-import org.springframework.web.bind.annotation.RequestMapping;
 // Importa a anotação que registra a classe como controller REST.
-import org.springframework.web.bind.annotation.RestController;
 
 // Importa o DTO usado nos corpos de criação e atualização.
 import api.dto.TarefaDTO;
@@ -82,6 +74,16 @@ public class TarefaController {
     public Tarefa buscarPorId(@PathVariable Long id) {
         // Delega a busca para o service.
         return service.buscarPorId(id);
+    }
+
+    @GetMapping("/buscar")
+    public Collection<Tarefa> buscarPorResponsavel(@RequestParam String responsavel) {
+        return service.buscarPorResponsavel(responsavel);
+    }
+
+    @GetMapping("/atrasadas")
+    public Collection<Tarefa> listarAtrasadas() {
+        return service.listarAtrasadas();
     }
 
     // Bônus -- fora do CRUD oficial da Aula 07. Atualiza título, responsável e

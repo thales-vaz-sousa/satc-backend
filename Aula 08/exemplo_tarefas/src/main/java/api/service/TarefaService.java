@@ -2,6 +2,7 @@
 package api.service;
 
 // Importa a interface Collection usada no retorno da listagem.
+import java.time.LocalDate;
 import java.util.Collection;
 
 // Importa a anotação que registra a classe como serviço Spring.
@@ -34,7 +35,7 @@ public class TarefaService {
     // Lista todas as tarefas armazenadas no PostgreSQL.
     public Collection<Tarefa> listarTodas() {
         // O Spring Data gera e executa o SELECT correspondente.
-        return repository.findAll();
+        return repository.findAllByOrderByDataPrazoAsc();
     }
 
     // Cria uma entidade a partir dos dados validados do DTO.
@@ -52,6 +53,14 @@ public class TarefaService {
         return repository.findById(id)
                 // Lança a exceção de negócio quando o registro não existe.
                 .orElseThrow(() -> new TarefaNaoEncontradaException(id));
+    }
+
+    public Collection<Tarefa> buscarPorResponsavel(String responsavel) {
+        return repository.findByResponsavelIgnoreCase(responsavel);
+    }
+
+    public Collection<Tarefa> listarAtrasadas() {
+        return repository.findByConcluidaFalseAndDataPrazoBefore(LocalDate.now());
     }
 
     // Remove a tarefa identificada pelo id.

@@ -7,6 +7,7 @@ package api.dto;
 import java.time.LocalDate;
 
 // Importa a validação que rejeita texto nulo, vazio ou só com espaços.
+import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 // Importa a validação que rejeita valores nulos.
 import jakarta.validation.constraints.NotNull;
@@ -55,7 +56,7 @@ public class TarefaDTO {
     // String -- LocalDate não tem "vazio" ou "espaços em branco", só existe ou é
     // null. Por isso aqui é @NotNull, não @NotBlank (que só compila em String).
     // Armazena o prazo enviado pelo cliente.
-    @NotNull(message = "Data de prazo é obrigatória")
+    @FutureOrPresent(message = "Data de prazo não pode ser no passado")
     private LocalDate dataPrazo;
 
     // ---------------------------------------------------------------- getters/setters
